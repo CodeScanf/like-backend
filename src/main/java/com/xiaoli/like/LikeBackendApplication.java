@@ -1,13 +1,15 @@
 package com.xiaoli.like;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+@MapperScan("com.xiaoli.like.mapper")
 public class LikeBackendApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(LikeBackendApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(LikeBackendApplication.class, args);
+	}
 
 }
