@@ -3,6 +3,10 @@ package com.xiaoli.like.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xiaoli.like.model.entity.Blog;
+import com.xiaoli.like.model.vo.BlogVO;
+import jakarta.servlet.http.HttpServletRequest;
+
+import java.util.List;
 
 /**
 * @author xiaoli
@@ -10,5 +14,9 @@ import com.xiaoli.like.model.entity.Blog;
 * @createDate 2025-11-23 17:13:09
 */
 public interface BlogService extends IService<Blog> {
+
+    BlogVO getBlogVOById(long blogId, HttpServletRequest request);
+
+    List<BlogVO> getBlogVOList(List<Blog> blogList, HttpServletRequest request);
 
 }

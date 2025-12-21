@@ -1,9 +1,11 @@
 package com.xiaoli.like.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.xiaoli.like.constant.UserConstant;
 import com.xiaoli.like.mapper.UserMapper;
 import com.xiaoli.like.model.entity.User;
 import com.xiaoli.like.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,8 +14,12 @@ import org.springframework.stereotype.Service;
 * @createDate 2025-11-23 17:13:26
 */
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, User>
-    implements UserService{
+public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService{
+
+    @Override
+    public User getLoginUser(HttpServletRequest request) {
+        return (User) request.getSession().getAttribute(UserConstant.LOGIN_USER);
+    }
 
 }
 

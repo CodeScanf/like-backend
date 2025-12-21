@@ -2,6 +2,7 @@ package com.xiaoli.like.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xiaoli.like.model.entity.User;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
 * @author xiaoli
@@ -10,4 +11,5 @@ import com.xiaoli.like.model.entity.User;
 */
 public interface UserService extends IService<User> {
 
+    User getLoginUser(HttpServletRequest request);
 }
