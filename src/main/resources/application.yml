@@ -8,6 +8,12 @@ spring:
     url: ${LIKE_DB_URL:}
     username: ${LIKE_DB_USERNAME:}
     password: ${LIKE_DB_PASSWORD:}
+  data:
+    redis:
+      database: ${LIKE_REDIS_DATABASE:0}
+      host: ${LIKE_REDIS_HOST:localhost}
+      connect-timeout: 5000
+      port: ${LIKE_REDIS_PORT:6379}
   mvc:
     servlet:
       path: /api
